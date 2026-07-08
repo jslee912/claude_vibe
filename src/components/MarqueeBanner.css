@@ -1,0 +1,55 @@
+.marquee {
+  overflow: hidden;
+  background: #ffffff;
+  border-top: 1px solid #e3e8ee;
+  border-bottom: 1px solid #e3e8ee;
+  padding: 12px 0;
+}
+
+.marquee__track {
+  display: inline-flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Inter", "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.39px;
+  color: #64748d;
+}
+
+.marquee__item strong {
+  font-weight: 500;
+  color: #0d253d;
+  margin-right: 6px;
+}
+
+.marquee__dot {
+  color: #b9b9f9;
+  margin: 0 16px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+}
